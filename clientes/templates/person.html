@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for person in persons %}
+
+        <li>
+            <td><a href="{% url 'persons_update' person.id %}"> {{person.first_name}} {{person.last_name}} </a></td>
+            <td><a href="{% url 'persons_delete' person.id %}"> Deletar </a></td>
+        </li>
+
+    {% endfor %}
+
+    <a href="{% url 'persons_new' %}">Novo Cliente</a>
+</body>
+</html>
